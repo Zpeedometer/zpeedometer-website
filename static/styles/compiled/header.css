@@ -77,13 +77,6 @@ header > div > nav {
     display: none;
   }
 }
-header > div > nav div.highlight {
-  height: 100%;
-  position: absolute;
-  background-color: hsla(0, 0%, 20%, 0.7);
-  border-radius: 5px;
-  transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
-}
 header > div > nav ul {
   height: 100%;
   display: flex;
@@ -120,12 +113,6 @@ header > div > nav ul li:hover {
 }
 header > div > nav ul li:has(a) {
   padding: unset;
-}
-header > div > nav ul li.active span {
-  color: orange;
-}
-header > div > nav ul li.active svg {
-  stroke: orange;
 }
 header > div > nav ul li a {
   all: unset;

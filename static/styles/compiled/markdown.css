@@ -14,10 +14,10 @@ main.markdown h1 {
   font-size: 48px;
 }
 main.markdown h2 {
-  font-size: 36px;
+  font-size: 24px;
 }
 main.markdown h3 {
-  font-size: 28px;
+  font-size: 20px;
 }
 main.markdown ul {
   margin-left: 24px;
@@ -26,10 +26,13 @@ main.markdown a {
   color: orangered;
 }
 main.markdown ul, main.markdown ol {
+  line-height: 1.5;
   list-style-type: unset;
 }
 main.markdown hr {
   margin: 16px 0;
+  border: none;
+  border-bottom: 1px solid var(--text-tertiary);
 }
 @media (width <= 760px) {
   main.markdown h1 {

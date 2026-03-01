@@ -53,7 +53,7 @@
                   <div>
                     <label for="maxValueSlider">Max Value</label>
                     <div>
-                      <span>0</span>
+                      <span>20</span>
                       <div><input id="maxValueSlider" class="slider" type="range" min="20" max="240" value="240"></div>
                       <span>240</span>
                     </div>
@@ -80,36 +80,20 @@
               </div>
             </div>
           </div>
-          <div>
-            <i data-lucide="wifi-off"></i>
-            <span>Offline & Ad-Free</span>
-            <p>No internet needed to use the application, only GPS. On top of that we will not show any ads ever.</p>
-          </div>
-          <div>
-            <i data-lucide="palette"></i>
-            <span>Personalization</span>
-            <p>You can customize accent colors, night glow, size and hide specific parts of the GUI to your liking. We support multiple languages.</p>
-          </div>
-          <div>
-            <i data-lucide="ruler"></i>
-            <span>Units</span>
-            <p>Change the unit of measurement for speed, height and distance. We support imperial and metric systems as well as units like knots.</p>
-          </div>
-          <div>
-            <i data-lucide="compass"></i>
-            <span>Compass & Altitude</span>
-            <p>A clean, minimal compass that smoothly follows your vehicle’s heading along with an altitude display.</p>
-          </div>
-          <div>
-            <i data-lucide="gauge"></i>
-            <span>Speed Warning</span>
-            <p>Use a fully customizable and intuitive warning if you drive to fast which you can toggle and change with presets while driving.</p>
-          </div>
-          <div>
-            <i data-lucide="flip-vertical-2"></i>
-            <span>Head-Up Display</span>
-            <p>Mirror your real-time speed and stats on your windshield for easy, distraction-free viewing.</p>
-          </div>
+          {{ range $feature := slice
+            (dict "icon" "wifi-off" "title" "Offline & Ad-Free" "description" "No internet needed to use the application, only GPS. On top of that we will not show any ads ever.")
+            (dict "icon" "palette" "title" "Personalization" "description" "You can customize accent colors, night glow, size and hide specific parts of the GUI to your liking. We support multiple languages.")
+            (dict "icon" "ruler" "title" "Units" "description" "Change the unit of measurement for speed, height and distance. We support imperial and metric systems as well as units like knots.")
+            (dict "icon" "compass" "title" "Compass & Altitude" "description" "A clean, minimal compass that smoothly follows your vehicle’s heading along with an altitude display.")
+            (dict "icon" "gauge" "title" "Speed Warning" "description" "Use a fully customizable and intuitive warning if you drive to fast which you can toggle and change with presets while driving.")
+            (dict "icon" "flip-vertical-2" "title" "Head-Up Display" "description" "Mirror your real-time speed and stats on your windshield for easy, distraction-free viewing.")
+          }}
+            <div>
+              <i data-lucide="{{ $feature.icon }}"></i>
+              <span>{{ $feature.title }}</span>
+              <p>{{ $feature.description }}</p>
+            </div>
+          {{ end }}
         </div>
       </div>
     </section>
@@ -117,41 +101,30 @@
       <h1>FAQ</h1>
       <h3>Browse common questions or search for answers.</h3>
       <div id="faqGrid" class="faq-grid">
-        q: "What is Zpeedometer?",
-        a: "Zpeedometer is a beautifully designed GPS speedometer app. It shows your current speed, altitude, heading, and distance traveled, all directly from your phone’s GPS. It’s made for drivers, bikers, boaters, or anyone who wants clear and accurate trip data without relying on their vehicle’s dashboard."
-        ++
-        q: "Do I need internet to use Zpeedometer?",
-        a: "No. Zpeedometer works offline using only your phone’s GPS. That means you can use it anywhere — even in areas with no network coverage."
-        ++
-        q: "Can I customize Zpeedometer?",
-        a: "Absolutely! You can:<ul>
-          <li>Pick from multiple themes and accent colors</li>
-          <li>Adjust maximum speed values</li>
-          <li>Change font sizes for easier reading</li>
-          <li>Hide or show interface elements</li>
-          <li>Enable night glow for low-light driving</li>
-          <li>Change your language</li>
-          <li>Use a HUD on your windshield</li>
-          <li>And much more (really)</li>
-        </ul>"
-        ++
-        q: "Does Zpeedometer support speed warnings?",
-        a: "Yes. You can set customizable speed alerts that warn you if you drive faster than your chosen limit. These can be toggled and adjusted even while driving."
-        ++
-        q: "What units of measurement are supported?",
-        a: "Zpeedometer supports both metric and imperial units — kilometers per hour (km/h), meters per second (m/s), miles per hour (mph), and knots for boating."
-        ++
-        q: "Is Zpeedometer free of ads?",
-        a: "Yes. Zpeedometer is completely ad-free, offering a clean, distraction-free driving experience."
-        ++
-        q: "On which devices does Zpeedometer work?",
-        a: "Zpeedometer works on most modern Android smartphones. Because it relies on GPS, it does not require special hardware from your car. We do plan an iOS & iPadOS in the future, likely releasing in 2026."
+        {{ range $i, $item := slice
+          (dict "question" "What is Zpeedometer?" "answer" "Zpeedometer is a beautifully designed GPS speedometer app. It shows your current speed, altitude, heading, and distance traveled, all directly from your phone’s GPS. It’s made for drivers, bikers, boaters, or anyone who wants clear and accurate trip data without relying on their vehicle’s dashboard.")
+          (dict "question" "Do I need internet to use Zpeedometer?" "answer" "No. Zpeedometer works offline using your phone’s GPS. That means you can use it anywhere — even in areas with no network coverage.")
+          (dict "question" "Can I customize Zpeedometer?" "answer" (safeHTML "Absolutely! You can:<ul><li>Pick from multiple themes and accent colors</li><li>Adjust maximum speed values</li><li>Change font sizes for easier reading</li><li>Hide or show interface elements</li><li>Enable night glow for low-light driving</li><li>Change your language</li><li>Use a HUD on your windshield</li><li>And much more (really)</li></ul>"))
+          (dict "question" "Does Zpeedometer support speed warnings?" "answer" "Yes. You can set customizable speed alerts that warn you if you drive faster than your chosen limit. These can be toggled and adjusted even while driving.")
+          (dict "question" "What units of measurement are supported?" "answer" "Zpeedometer supports both metric and imperial units — kilometers per hour (km/h), meters per second (m/s), miles per hour (mph), and knots for boating.")
+          (dict "question" "Is Zpeedometer free of ads?" "answer" "Yes. Zpeedometer is completely ad-free, offering a clean, distraction-free driving experience.")
+          (dict "question" "On which devices does Zpeedometer work?" "answer" "Zpeedometer works on most modern Android smartphones. Because it relies on GPS, it does not require special hardware from your car. I do plan an iOS & iPadOS in the future, but I can’t give a timeline for that yet.")
+        }}
+          <div>
+            <input id="faqCheckbox{{ add $i 1 }}" type="checkbox">
+            <label for="faqCheckbox{{ add $i 1 }}">
+              <span>{{ $item.question }}</span>
+              <i data-lucide="chevron-down"></i>
+            </label>
+            <div><div>{{ $item.answer }}</div></div>
+          </div>
+        {{ end }}
       </div>
-      <p class="main-text">If you have more questions reach me at <a href="mailto:business.alexander499@gmail.com" title="business.alexander499@gmail.com">business.alexander499@gmail.com</a> or <a href>leave a review</a> on Google Play.</p>
+      <p class="main-text">If you have more questions reach me at <a href="mailto:business.alexander499@gmail.com" title="business.alexander499@gmail.com">business.alexander499@gmail.com</a> or <a href="https://play.google.com/store/apps/details?id=com.alexander499.speedometer" target="_blank">leave a review</a> on Google Play.</p>
     </section>
     <section id="outro">
       <h1>Have a nice drive!</h1>
-      <h3>We’ll handle the details. You just enjoy your trip. Available on iPhone, iPad, Mac and Apple Watch. Download for free.</h3>
+      <h3>We’ll handle the details. You just enjoy your trip. Available on almost any Android Device. Download for free.</h3>
       <a href>
         <i data-lucide="smartphone"></i>
         Give Zpeedometer a try

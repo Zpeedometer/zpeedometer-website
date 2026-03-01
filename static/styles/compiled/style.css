@@ -36,6 +36,7 @@ ul, ol {
   --bg-secondary: #050408;
   --text-primary: white;
   --text-secondary: hsl(0 0 100% / 0.6);
+  --text-tertiary: hsl(0 0 80% / 0.5);
   --border: #ccc2;
   --border-thin: hsla(0 0 100% / 0.1);
   --accent-red: #ff383c;

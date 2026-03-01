@@ -3,10 +3,10 @@ title = "Changelog"
 type  = "changelog"
 +++
 
-<time datetime="2023-07-06">6 Jul 2023</time>
-## 1.0.1
-- Example
+## 1.0.1 &centerdot; 10 Jan 2000
+- Didn't actually happen yet
+- This is an example changelog
 ---
-<time datetime="2023-07-06">6 Jul 2023</time>
-## 1.0.0
-- Example
+## 1.0.0 &centerdot; 31 Jan 2000
+- Initial Release
+- Didn't actually happen yet either

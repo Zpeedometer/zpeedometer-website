@@ -1,35 +1,14 @@
 // Story Text
 const storyTextSetActive = () => {
   document.querySelectorAll("#storyText > div").forEach(div => {
-    if (div.getBoundingClientRect().top <= window.innerHeight / 2) {
-      div.classList.add("active");
-    } else div.classList.remove("active");
+    if (div.getBoundingClientRect().top <= window.innerHeight / 2) div.classList.add("active");
+    else div.classList.remove("active");
   });
 }
 
 window.addEventListener("scroll", storyTextSetActive);
 window.addEventListener("resize", storyTextSetActive);
 storyTextSetActive();
-
-// Features
-const faqGrid = document.getElementById("faqGrid");
-const faqItems = faqGrid.innerHTML.trim().split("++").map(block => {
-  const qMatch = block.match(/q:\s*"(.*?)"/s);
-  const aMatch = block.match(/a:\s*"(.*?)"/s);
-  return {
-    q: qMatch ? qMatch[1] : "",
-    a: aMatch ? aMatch[1] : ""
-  };
-});
-faqGrid.innerHTML = faqItems.map(f =>
-  `<div>
-    <input id="${"faqCheckbox" + f.q.replace(/[^A-Za-z0-9]+/g, "")}" type="checkbox">
-    <label for="${"faqCheckbox" + f.q.replace(/[^A-Za-z0-9]+/g, "")}">
-      <span>${f.q}</span><i data-lucide="chevron-down"></i>
-    </label>
-    <div><div>${f.a}</div></div>
-  </div>`
-).join("");
 
 // Sliders
 const sliders = document.querySelectorAll(".slider")
@@ -45,35 +24,30 @@ sliders.forEach(slider => {
 });
 
 // Speedometer Showcase
-const speedometer = document.getElementById("speedometer");
-const speedSlider = document.getElementById("speedSlider");
-const maxValueSlider = document.getElementById("maxValueSlider");
-const labelTextInput = document.getElementById("labelTextInput");
+const speedometer = document.getElementById("speedometer"),
+  speedSlider = document.getElementById("speedSlider"),
+  maxValueSlider = document.getElementById("maxValueSlider"),
+  labelTextInput = document.getElementById("labelTextInput");
 let maxValue = 240;
 const startAngle = 220;
 
 function generateTicks(maxValue = 240) {
   let majorStep = 10;
-  if (maxValue > 120) {
-    majorStep = 20;
-  } else if (maxValue > 70) {
-    majorStep = 10;
-  } else majorStep = 5;
+  if (maxValue > 120) majorStep = 20;
+  else if (maxValue > 70) majorStep = 10;
+  else majorStep = 5;
 
-  const step = majorStep / 2;
-  const totalValues = maxValue / step + 1;
-  const angleStep = (500 - startAngle) / (totalValues - 1);
   const ticks = speedometer.querySelectorAll(":scope > .tick");
   ticks.forEach(tick => tick.remove());
-  
-  for (let i = 0; i < totalValues; i++) {
-    const value = i * step;
-    const angle = startAngle + i * angleStep;
+
+  for (let i = 0; i < maxValue / majorStep * 2 + 1; i++) {
+    const value = i * majorStep / 2;
+    const angle = startAngle + i * (500 - startAngle) / maxValue * majorStep / 2;
     const isMajor = value % majorStep === 0;
-    const tick = document.createElement('div');
-    tick.classList.add('tick', isMajor ? 'major' : 'minor');
-    tick.style.setProperty('--angle', `${angle}deg`);
-    if (isMajor) tick.style.setProperty('--label', `"${value}"`);
+    const tick = document.createElement("div");
+    tick.classList.add("tick", isMajor ? "major" : "minor");
+    tick.style.setProperty("--angle", `${angle}deg`);
+    if (isMajor) tick.style.setProperty("--label", `"${value}"`);
     speedometer.appendChild(tick);
   }
 }
@@ -87,6 +61,6 @@ function setPointerToSpeed(speed = 0, maxValue = 240) {
 generateTicks();
 setPointerToSpeed();
 speedometer.style.setProperty("--speedometer-label", "'Zpeedometer'");
-speedSlider.addEventListener("input", () => { setPointerToSpeed(speedSlider.value); });
-maxValueSlider.addEventListener("input", () => { generateTicks(maxValueSlider.value); });
-labelTextInput.addEventListener("input", () => { speedometer.style.setProperty("--speedometer-label", `"${labelTextInput.value}"`); });
+speedSlider.addEventListener("input", () => setPointerToSpeed(speedSlider.value));
+maxValueSlider.addEventListener("input", () => generateTicks(maxValueSlider.value));
+labelTextInput.addEventListener("input", () => speedometer.style.setProperty("--speedometer-label", `"${labelTextInput.value}"`));

@@ -144,6 +144,8 @@ body {
           overflow: hidden visible;
           user-select: none;
 
+          @media (width <= 640px) { min-height: 424px; }
+
           > div.mockup {
             max-width: calc(100vw - 16px);
             position: relative;

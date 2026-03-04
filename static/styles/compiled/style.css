@@ -174,6 +174,11 @@ body main.index > section#home > div.showcase {
   overflow: hidden visible;
   user-select: none;
 }
+@media (width <= 640px) {
+  body main.index > section#home > div.showcase {
+    min-height: 424px;
+  }
+}
 body main.index > section#home > div.showcase > div.mockup {
   max-width: calc(100vw - 16px);
   position: relative;

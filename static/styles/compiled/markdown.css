@@ -7,6 +7,9 @@ main.markdown {
     translate: calc(50vw - 50%);
   }
 }
+main.markdown.changelog :is(h3, ul) {
+  padding-left: 1rem;
+}
 main.markdown h1, main.markdown h2, main.markdown h3, main.markdown h4, main.markdown h5, main.markdown h6 {
   margin: 16px 0 8px;
 }

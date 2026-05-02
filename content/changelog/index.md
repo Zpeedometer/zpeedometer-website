@@ -3,10 +3,11 @@ title = "Changelog"
 type  = "changelog"
 +++
 
-## 1.0.1 &centerdot; 10 Jan 2000
-- Didn't actually happen yet
-- This is an example changelog
+## 1.0.1 &centerdot; Upcoming
+### Added
+- Added a 'Set Total Distance' button to set the total distance to a custom value.
+### Changed
+- Rearranged total distance buttons in settings into their own category.
 ---
-## 1.0.0 &centerdot; 31 Jan 2000
+## 1.0.0 (0.3.13) &centerdot; April, 21 2026
 - Initial Release
-- Didn't actually happen yet either

@@ -37,6 +37,12 @@ main.markdown hr {
   border: none;
   border-bottom: 1px solid var(--text-tertiary);
 }
+main.markdown code {
+  background-color: #222;
+  border: 1px #333 solid;
+  border-radius: 8px;
+  padding: 0 4px;
+}
 @media (width <= 760px) {
   main.markdown h1 {
     font-size: 40px;

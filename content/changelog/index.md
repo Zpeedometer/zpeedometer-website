@@ -3,7 +3,7 @@ title = "Changelog"
 type  = "changelog"
 +++
 
-## 1.0.1 &centerdot; Upcoming
+## 1.0.2 &centerdot; Upcoming
 ### Changed
 - Changed the color of most text and icons on the main page from a light gray (`#d8d8d8` and `#ccc`) to a pure white (`#fff`) color to maximize the contrast as much as possible.
 ### Fixed

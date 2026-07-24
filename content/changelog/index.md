@@ -12,6 +12,7 @@ type  = "changelog"
 - Cleaned out unused background code and obsolete dependencies to keep the app lightweight.
 ### Fixed
 - Fixed a critical bug where the startup sequence could freeze for up to 10 seconds due to conflicting audio preload.
+- Improved GPS reliability: The app now gives sensors more time to find your location on startup and will automatically restart itself if it gets disconnected.
 - Fixed many performance issues.
 
 ---

@@ -3,6 +3,21 @@ title = "Changelog"
 type  = "changelog"
 +++
 
+## 1.1.1 &centerdot; Upcoming
+### Changed
+- Increased the hitbox size of buttons and links so they are much easier to press while driving.
+- The main app scale is now automatically detected and optimized to fit your specific device screen perfectly out of the box.
+- The total distance and trip odometer now always display exactly two decimal places for better precision.
+- Rewrote the settings engine to generate components dynamically from a clean configuration structure, paving the way for faster future updates.
+### Fixed
+- Fixed the GPS data initialization delay.
+- Fixed the compass needle occasionally getting stuck or lag during sharp turns.
+- Removed a broken layout translation string inside the log description.
+- Optimized the settings opening animation so it moves smoothly, even on older devices.
+- Overhauled the custom slider logic to eliminate drag lag and track layout stuttering completely.
+
+---
+
 ## 1.1.0 &centerdot; Upcoming
 ### Changed
 - Localization is now powered by [Tolgee](https://tolgee.io), laying the groundwork for smoother translations in upcoming updates.

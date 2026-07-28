@@ -15,6 +15,7 @@ type  = "changelog"
 - Removed a broken layout translation string inside the log description.
 - Optimized the settings opening animation so it moves smoothly, even on older devices.
 - Overhauled the custom slider logic to eliminate drag lag and track layout stuttering completely.
+- Logs now stay enabled and saved after app restart.
 
 ---
 
@@ -29,7 +30,6 @@ type  = "changelog"
 - Fixed a critical bug where the startup sequence could freeze for up to 10 seconds due to conflicting audio preload.
 - Improved GPS reliability: The app now gives sensors more time to find your location on startup and will automatically restart itself if it gets disconnected.
 - Fixed many performance issues.
-- Logs now stay enabled and saved after app restart.
 
 ---
 

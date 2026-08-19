@@ -3,7 +3,7 @@ title = "Changelog"
 type  = "changelog"
 +++
 
-## 1.1.1 &centerdot; Upcoming
+## 1.1.1 &centerdot; 7 Aug 2026
 ### Changed
 - Increased the hitbox size of buttons and links so they are much easier to press while driving.
 - The main app scale is now automatically detected and optimized to fit your specific device screen perfectly out of the box.
@@ -19,7 +19,7 @@ type  = "changelog"
 
 ---
 
-## 1.1.0 &centerdot; Upcoming
+## 1.1.0 &centerdot; 7 Aug 2026
 ### Changed
 - Localization is now powered by [Tolgee](https://tolgee.io), laying the groundwork for smoother translations in upcoming updates.
 - Modernized app architecture: Upgraded underlying frameworks (including [Capacitor](https://capacitorjs.com) 8) to ensure the app stays compatible with the latest Android features and security standards.

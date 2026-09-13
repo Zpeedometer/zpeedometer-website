@@ -6,11 +6,11 @@ type  = "changelog"
 ## 1.1.2 &centerdot; Upcoming
 ### Changed
 - Switched to scoped icon imports (only the icons used are bundled), reducing the overall app download size.
-- Resolved blurry or pixelated HUD when rotating it to a value other than `0 0`.
 - TypeScript Migration: Refactored the entire codebase from JavaScript to TypeScript for enhanced stability.
 - Redesigned the GPS status popover to align better with the app's overall visual style.
 ### Fixed
 - Fixed time scaling issues when HUD mode is active.
+- Resolved blurry or pixelated HUD when rotating it to a value other than `0 0`.
 
 ## 1.1.1 &centerdot; 7 Aug 2026
 ### Changed

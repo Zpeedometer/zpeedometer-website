@@ -3,7 +3,7 @@ title = "Changelog"
 type  = "changelog"
 +++
 
-## 1.1.2 &centerdot; Upcoming
+## 1.1.2 &centerdot; 17 Sep 2026
 ### Changed
 - Switched to scoped icon imports (only the icons used are bundled), reducing the overall app download size.
 - TypeScript Migration: Refactored the entire codebase from JavaScript to TypeScript for enhanced stability.
